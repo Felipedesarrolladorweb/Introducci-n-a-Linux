@@ -35,7 +35,7 @@ Existen varios cargadores de boot(Boot loaders) para Linux; lo smás comunes son
 El cargador de boot tiene dos procesos distintos:  
 </br>  
 
-Para sistemas usando el método BIOS/MBR, el cargador boot se encuentra en el primer sector del disco duro, también conocido como el Master Boot Record(MBR).SSu tamaño es de 512 bytes. En este proceso, el cargador boot examina la **partition table** y encuentra una partición booteable. Una vez que la encuentra, entonces busca el cargador de boot del segundo proceso, por ejemplo GRUB, y lo carga dentro de la RAM.  
+Para sistemas usando el método BIOS/MBR, el cargador boot se encuentra en el primer sector del disco duro, también conocido como el Master Boot Record(MBR).Su tamaño es de 512 bytes. En este proceso, el cargador boot examina la **partition table** y encuentra una partición booteable. Una vez que la encuentra, entonces busca el cargador de boot del segundo proceso, por ejemplo GRUB, y lo carga dentro de la RAM.  
 </br>  
 Para sistemas que usan el método EFI/UEFI, el Firmware UEFI lee los datos del Boot Manager para determinar que tipo de aplicación UEFI va a ser procesada y desde donde(desde que disco y partición el EFI puede ser encontrado). Es entonces cuando el firmware inicia la aplicación UEFI, por ejemplo GRUB, tal cual se definió en la entrada boot en el firmware administrador de boot(firmware's boot manager). Este procedimiento es complicado, pero es más versátil que los métodos viejos MBR.  
 </br>  
