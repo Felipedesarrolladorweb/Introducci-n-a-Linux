@@ -59,6 +59,24 @@ El programa montado instruye al sistema operativo de que un filesystem está lis
 
 ![initramfs](initramdisk.jpg)
 
+</br>  
+
+## Inicio de sesión text-mode / Text-mode login  
+
+</br>  
+
+Ya finalizando el proceso de boot, **init** inicia un número de peticiones text-mode de inicio de sesión(login). Estas se encargan de permitir escribir el propio nombre de usuario(username), seguido de la contraseña, y eventualmente ejecutar un **command shell**. Sin embargpo si se está ejecutando un sistema con grafical login interface(interfaz gráfica de usuario), no se podrá ver esto al comienzo.  
+</br>  
+
+Como se podrá aprender más adelante, las terminales que ejecutan command shells pueden ser accesadas usando la tecla **ALT** + una tecla **function**. La mayoría de distribuciones inician seis terminales de texto y uno de gráficas usando las teclas **F1** ó **F2**. Dentro de un ambiente gráfico(graphical environment), cambiar a una consola de texto requiere de presionar las teclas CTRL-ALT + la  tecla de función que se requiera ( con F7 + ó F1 para entrar a la GUI / Grahical User Interface).  
+
+</br>  
+
+![text-mode logins](text-modelogins.jpg)  
+
+</br>  
+
+generalmente, el command shell predeterminado es **bash**, pero hay también algunos command shells avanzados disponibles. El shell imprime una petición de texto, indicando que está listo para aceptar comandos; luego que el usuario escribe el comando y presiona la tecla **enter**, el comando es ejecutado, y otra peticion es desplegada después de que el comando termina de ejecutarse.  
 
 ## Linux command line
 
