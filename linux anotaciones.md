@@ -48,6 +48,16 @@ El cargador boot para el segundo proceso se encuentra bajo la dirección `/boot`
 
 </br>  
 
+El **initramfs(initial ram file system)** contiene programas y archivos binarios que procesan todas las acciones requeridas para montar el propio archivo root del sistema(root filesystem), como proveer funcionalidad kernel para los filesystem y drivers de dispositivos  requeridos para los controles de almacenamiento masivo(mass storage), con una instalación(facility) llamada **udev**(user device), el cual es responsable de saber cuales dipositivos están presentes, localizar los drivers de dispositivos que necesiten para operar apropiadamente, y cargarlos.Después de que el root filesystem ha sido encontrado, se le revisa en busca de errores y luego se monta.  
+</br>  
+
+El programa montado instruye al sistema operativo de que un filesystem está listo para uso, y lo asocia con un punto particular en la jerarquía general del filesystem(_el punto de montaje / mount point_). Si funciona bn, el intramfs es borrado de la RAM y el programa **init** es ejecutado en el **root filesystem**(`/sbin/init`).  
+</br>  
+
+**init** lleva el montaje(mounting) y el _pivoting_ hacia el **principal root filesistem**. Si algúnos drivers de hardware especiales son requeridos antes de que el almacenamiento masivo sea accesado, deben estar en la imagen **initramfs**.  
+</br>  
+
+![initramfs](initramdisk.jpg)
 
 
 ## Linux command line
