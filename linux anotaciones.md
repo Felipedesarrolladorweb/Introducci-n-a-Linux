@@ -119,6 +119,33 @@ Sin embargo, todas las mayores distribuciones han dejado a un lado este método 
 
 </br>  
 
+## Startup Alternatives  
+
+</br>  
+
+**Sysvinit** Veía las cosas como un proceso serial, dividido entre una serie de estados secuenciales. Cada estado requería finalización antes de que el siguiente pudiera comenzar. Por lo tanto, el inicio no podría tomar fácilmente ventaha del _**procesamiento paralelo(parallel procesing)**_ que podría haberse realizado en múltiples procesadores o núcleos.  
+
+</br>  
+
+Además, apagar e iniciar see veía como un evento relativamente poco usual. Esto ya no sigue siendo cierto, especialmente si hablamos de dispositivos móviles y sistemas Linux embebidos(embedded systems). Algunos métodos modernos, como el uso de **containers**, pueden requerir de casí instantáneos tiempos de inicio o booteo. Por lo tanto, los sistemas de ahora requieren métodos con capacidades más rápdias y mejoradas. Finalmente, los métodos antiguos requerían más bien instrucciones complejas de inicio(startups), las cuales eran difíciles de implementarse como universales a través de las versiones de distribución, versiones de kernelm arquitecturasa, y tipos de sistemas. Las dos principales alternativas desarrolladas fueron:  
+
+</br>  
+
+**Upstart**  
+
+* Desarrollada por Ubuntu e incluida en 2006.  
+* Adoptada en Fedora 9(en 2008), y en RHEL 6 y sus clones.  
+
+</br>  
+
+**systemd**  
+
+* Adoptado primeramente por Fedora en 2011.  
+* Adoptado por RHEL 7 y SUSE.  
+* Reemplazó Upstart en Ubuntu 16.04.  
+
+</br>  
+
 
 
 ## Linux command line
