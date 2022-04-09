@@ -78,6 +78,49 @@ Como se podrá aprender más adelante, las terminales que ejecutan command shell
 
 generalmente, el command shell predeterminado es **bash**, pero hay también algunos command shells avanzados disponibles. El shell imprime una petición de texto, indicando que está listo para aceptar comandos; luego que el usuario escribe el comando y presiona la tecla **enter**, el comando es ejecutado, y otra peticion es desplegada después de que el comando termina de ejecutarse.  
 
+</br>  
+
+## El Kernel Linux  
+
+</br>  
+
+El cargador boot(Boot Loader), carga tanto el **kernel** como la archivo de sistema inicial RAM-base(initramfs) dentro de la memoria, de manera que pueda ser usada directamente por el kernel.  
+
+</br>  
+
+![el linux kernel](linuxkernel.jpg)  
+
+</br>  
+
+Cuando el kernel es cargado en la RAM,inmediatamente inicializa y configura la memoria del computador y configura todos los hardware o físicos instalados en el sistema. Esto incluye todos los procesadores, subsistemas I/O, dispositivos de almacenamiento,etc. El kernel también carga algunas aplicaciones de espacio de usuario necesarias.  
+
+</br>  
+
+* **/sbin/init and Services**  
+
+</br>  
+
+Una vez que el kernel ha configurado todo el hardware y montado el firoot filesystem, entonces kernel ejecuta `/sbin/init`. Esto,se convierte en el proceso inicial o principal, el cual inicai ortos procesos para mantener el sistema funcionando. La mayoría de otros procesos en el sistema registran su origen en **init**; a excepción de los llamados procesadores kernel. Estos son iniciados o ejecutados por kernel directamente, y su trabajo es manejar los detalles del sistema operativo interno.  
+
+</br>  
+
+Aparte de inciar el ssitema, **init** es responsable de mantener el sistema funcionadno y de apagarlo correctamente. Otra de sus responsabilidades es actuar cuando sea necesario como administrador de todos los procesos que no son kernel; los borra después de que terminen, y rreinicia los servicios de inicio de sesión de usuario cuando sea el usuario incie o cierre sesión, y hace lo mismo para otros servicios del sistema que corren en segundo plano(background).  
+</br>  
+
+![servicios init](init-services.jpg)  
+
+</br>  
+
+Tradicionalmente, este proceso de inicio fue hecho usando procedimientos que remontan de regreso a los 1980 y el System V variety de UNIX. Este proceso serial hzio que el sistema pasra por una secuencia de **runlevels** que contenían colecciones de scripts que iniciaban y detenían servicios. Cada runlevel soportaba un modo diferente de correr el ssitema. Dentro de cada runlevel, servicios imndividuales podrían ser dispuestos a ejecutarse, o a ser detenidos(shut down) si estaban ejecutandose.  
+
+</br>  
+
+Sin embargo, todas las mayores distribuciones han dejado a un lado este método runlevel de iniciación de sistema, aunque usualmente dichas distribuciones simulan o emulan muchoas utilidades de System V por razones de compatibilidad. Más adelante se hablará de los nuevos métodos los cuales el **systemd** se ha vuelto el principal.  
+
+</br>  
+
+
+
 ## Linux command line
 
 ### **Comandos comunes**
