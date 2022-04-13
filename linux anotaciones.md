@@ -146,6 +146,62 @@ Además, apagar e iniciar see veía como un evento relativamente poco usual. Est
 
 </br>  
 
+A pesar de la actualización a **_systemd_** fue controversial, se ha ido adpotando en todas las distribuciones principales, por esa razón no explicaremos mucho acerca del viejo método de inicio de **_System V_**. A pesar de las opiniones el haber implementado el **_systemd_**, ha hecho más fácil y simple trabajar en sistemas Linux, por la poca diferencia entre cada distro.  
+
+## Características de Systemd / Systemd Features  
+
+Sistemas con **_systemd_** son mas rápidoz para iniciar que aquellos que usaban métodos **_init_**. Reemplazó una secuencia serializada de pasos, con técnicas de paralelización, las cuales permitian iniciar múltiples servicios simultaneamente.  
+
+Archivos complicados shell scripts fueron reemplazados por simples archivos de configuración, los cuales enumeravan qué era lo que debía de realziarse antes de que unn servicio iniciara, cómo ejecutar un servicio de inicio y qupe condiciones ha cunplido el servicio una vez terminado el proceso de inicio.  
+
+Algo importante a mencionar, es que **_/sbin/init_**, ahora es **_/lib/systemd/systemd_**, esto quiere decir que el **_systemd_** reemplaza el proceso **_init_**.  
+
+UN comando de **_systemd_**, es usado para la mayoría de funciones básicas, ejm:  
+
+* Empezar, detener, o reiniciar un servicio/usando **_httpd_**, el cual es el Apache web server, como ejemplo) en un sistema ejecutándose:  
+
+```shell
+$ sudo systemctl start|stop|restart httpd.service
+```  
+
+*Habilitar o inhabilitar un servicio de sistema desde el inicio en el boteo del sistema(system boot):  
+
+```shell  
+$ sudo systemctl enable|disable httpd.service
+```
+
+En la mayoría de casos el **_.service_** puede ser omitido. Hay muchas más diferencias con respecto a los métodos anteriores de inicio.
+
+</br>  
+
+## Sistemas de archivos Linux / Linux Filesystems  
+
+Un sistema de archivo es la manera de almacenar colección de datos sin gestionar de una manera entendible.  
+
+Diferentes tipos de archivos sporotados por  Linux:  
+
+* Sistemas de archivos de disco convencionales: **_ext3, ext4, Btrfs, JFS, NTFS, vfat, exfat_**,etc.  
+
+* Sistemas de archivos de almacenamiento flash: **_ubifs, jffs, yaffs_**.  
+
+* Sistemas de archivos database(base de datos).  
+
+* Sistemas de archivos con propósito especial: **_profcs, sysfs, tempfs, squashfs, debugfs, fuse,_** etc.  
+
+la siguiente sección explicará los sistemas de archivos(filesystems) standard más usados entre las distros de Linux principales.  
+
+## Sistemas de archivos y Particiones  
+
+Una partición es una sección física de un disco duro, o lo que se asemejaría en el caso de los discos de estado sólido.  
+
+Un sistema de archivos(filesystem) es un método de almacenar/encontrar archivos en un diskco duro(generalmente en una partición).  
+
+Una particióne s una especie de contenedor en el ual eol sistema de archivo se encuentra, aunque en algbnos casos, el sistema de archivos puede aparecer en más de una partición si usa links figurativos.  
+
+La siguiente tabla compara el sistema de archivo de Windows y Linux:  
+
+
+![sistema de archivos](disksystem.png)  
 
 
 ## Linux command line
